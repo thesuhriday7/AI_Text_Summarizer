@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background-color: #EAEAE6;
+    font-family: "Poppins", sans-serif;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+}
+.im{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+}
+.article{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.content1 * {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.content1 {
+    --hue: 223;
+    --bg: hsl(var(--hue), 90%, 95%);
+    --fg: hsl(var(--hue), 90%, 5%);
+    --trans-dur: 0.3s;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    position: relative;
+    /*background-color: var(--bg);*/
+    color: var(--fg);
+    transition: background-color var(--trans-dur);
+}
+.content1.active {
+    display: flex;
+}
+.content1 .ip {
+    width: 8em;  /* Reduce width */
+    height: 4em; /* Reduce height */
+    transform: scale(0.8);
+}
+.content1 .ip__track {
+    stroke: hsl(var(--hue), 90%, 90%);
+    transition: stroke var(--trans-dur);
+}
+
+.content1 .ip__worm1,
+.content1 .ip__worm2 {
+    animation: worm1 2s linear infinite;
+}
+
+.content1 .ip__worm2 {
+    animation-name: worm2;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    .content1 {
+        --bg: hsl(var(--hue), 90%, 5%);
+        --fg: hsl(var(--hue), 90%, 95%);
+    }
+
+    .content1 .ip__track {
+        stroke: hsl(var(--hue), 90%, 15%);
+    }
+}
+
+/* Animation */
+@keyframes worm1 {
+    from {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        animation-timing-function: steps(1);
+        stroke-dashoffset: -358;
+    }
+    50.01% {
+        animation-timing-function: linear;
+        stroke-dashoffset: 358;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes worm2 {
+    from {
+        stroke-dashoffset: 358;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: -358;
+    }
+}
+
+
+.formContainer {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 10px;
+    margin-top: 3rem;
+}
+
+.formContainer input {
+    all: unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.formContainer input:focus {
+    outline: 3px solid black;
+}
+
+.formContainer input::placeholder {
+    color: black;
+}
+
+.formContainer .btn {
+    width: 40px;
+    height: 40px;
+    /* display: grid;
+    place-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 100%;
+    transform: scale(1);
+}
+
+.form-container .btn img {
+    object-fit: contain;
+}
+
+.footer{
+    display:flex;
+    max-width: 85%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.here2{
+    font-size: large;
+    color:darkblue;
+    font-family: 'Abril Fatface', cursive;
+}
+.here3{
+    background: rgba(128, 128, 128, 0.2); /* Light grey with 20% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+.here4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
